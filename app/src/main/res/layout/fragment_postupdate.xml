@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editTextNamePostUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название должности"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextSalaryUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNamePostUpdate"
+        android:layout_marginTop="16dp"
+        android:hint="Базовая ставка"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/updatePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSalaryUpdate"
+        android:layout_marginTop="24dp"
+        android:text="Изменить"
+        android:gravity="center"
+        android:width="200dp"
+        android:height="50dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

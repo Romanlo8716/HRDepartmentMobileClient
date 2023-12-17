@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.post.PostDetailsFragment">
+
+    <TextView
+        android:id="@+id/textViewNamePost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="City"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textViewSalary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNamePost"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Street"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/bEditPost"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewSalary"
+        android:layout_marginTop="8dp"
+        android:text="Изменить" />
+
+    <Button
+        android:id="@+id/bDeletePost"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bEditPost"
+        android:layout_marginTop="8dp"
+        android:text="Удалить"
+        android:backgroundTint="@color/red"/>
+
+</LinearLayout>

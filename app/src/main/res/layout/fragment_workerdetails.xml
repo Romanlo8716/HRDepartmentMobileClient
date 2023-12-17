@@ -1,0 +1,749 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.worker.WorkerDetailsFragment">
+
+    <!-- Worker's Name TextViews (Centered at the top) -->
+    <LinearLayout
+        android:id="@+id/linearLayoutName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textViewSurnameWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Surname"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textViewNameWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Name"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textViewMiddlenameWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Middlename"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <!-- Worker's Photo (Left) -->
+    <ImageView
+        android:id="@+id/imageViewWorker"
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:layout_below="@id/linearLayoutName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/no_photo"
+        android:layout_marginLeft="20px"/>
+
+    <!-- "Personal Data" Label (Right) -->
+
+    <!-- Date of Birth TextView (Below "Personal Data" Label) -->
+
+    <TextView
+        android:id="@+id/lichData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayoutName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="-30px"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="53dp"
+        android:text="Личные данные"
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/textViewDateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_below="@id/lichData"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="170dp"/>
+
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_below="@id/lichData"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="170dp"/>
+
+    <TextView
+        android:id="@+id/textViewPlaceHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_below="@id/lichData"
+        android:layout_alignParentEnd="false"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="170dp"/>
+
+    <LinearLayout
+        android:id="@+id/leftLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imageViewWorker"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/familyData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Данные о семье"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewFamilyPos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/familyData"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewCoutChildren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewFamilyPos"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/contInform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Контакты"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/contInform"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewPhone"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/Snils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Снилс"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:layout_marginTop="15sp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewSnils"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/Snils"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+
+
+    </LinearLayout>
+
+
+
+    <!-- Right LinearLayout Below the Photo -->
+    <LinearLayout
+        android:id="@+id/rightLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imageViewWorker"
+        android:layout_alignRight="@+id/leftLinearLayout"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:id="@+id/passData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Паспортные данные"
+            android:textColor="@color/black"
+            android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/textViewSeriesPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/passData"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewNumberPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewSeriesPass"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewIssuedByWhom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewNumberPass"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewDateOfIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewIssuedByWhom"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/textViewCodePodraz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/textViewDateOfIssue"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+        <TextView
+            android:id="@+id/inn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Инн"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:layout_marginTop="15sp"/>
+
+        <TextView
+            android:id="@+id/textViewInn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_below="@id/inn"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"/>
+
+
+
+        <!-- Add your views inside this LinearLayout -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/descWorker"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rightLinearLayout"
+        android:text="Описание сотрудника:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descWorker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_background"
+        android:visibility="gone"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/DepAndPostWorker"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewDescription"
+        android:text="Отделы и должности сотрудника:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DepAndPostWorker"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutDescAndPostOfWorker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateDepartment"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Отдел"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Должность"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Действие"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/MilitaryTitle"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutDescAndPostOfWorker"
+        android:text="Данные военного билета:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+
+
+    <LinearLayout
+        android:id="@+id/DescMilitaryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/MilitaryTitle"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/textViewMilitaryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+
+        <TextView
+            android:id="@+id/textViewShelfLife"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+
+        <TextView
+            android:id="@+id/textViewStockCatagory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+        <TextView
+            android:id="@+id/textViewProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+
+        <TextView
+            android:id="@+id/textViewVUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+
+        <TextView
+            android:id="@+id/textViewNameKomis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:layout_marginTop="15sp"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/LaborBook"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DescMilitaryTitle"
+        android:text="Данные трудовой книги:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateLaborBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LaborBook"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutLaborBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateLaborBook"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Дата записи"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Работа"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Сведения"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/Education"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutLaborBook"
+        android:text="Данные об образованиях:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateEducation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Education"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutEducation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateEducation"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Серия и номер диплома"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Специальность"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Год окончания"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/Vacation"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutEducation"
+        android:text="Данные об отпусках:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateVacation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Vacation"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutVacation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateVacation"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Начало отпуска"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Конец отпуска"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Причина"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/MedicalBook"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutVacation"
+        android:layout_centerHorizontal="true"
+        android:text="Данные медицинской книги:"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateMedicalBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MedicalBook"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutMedicalBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateMedicalBook"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Место осмотра"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Дата осмотра"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Заключение"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/bEditWorker"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/tableLayoutMedicalBook"
+        android:layout_marginTop="8dp"
+        android:text="Изменить"
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/bDeleteWorker"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bRecoveryWorker"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:text="Удалить"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/bDismissWorker"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bEditWorker"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:text="Уволить"
+        android:backgroundTint="@color/red"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/bRecoveryWorker"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/tableLayoutMedicalBook"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:text="Восстановить"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>
+
+</ScrollView>

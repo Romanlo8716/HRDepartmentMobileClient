@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editTextCityUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Город"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextStreetUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextCityUpdate"
+        android:layout_marginTop="16dp"
+        android:hint="Улица"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextHouseUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextStreetUpdate"
+        android:layout_marginTop="16dp"
+        android:hint="Дом"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/updateAdressOfDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextHouseUpdate"
+        android:layout_marginTop="24dp"
+        android:text="Изменить"
+        android:gravity="center"
+        android:width="200dp"
+        android:height="50dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

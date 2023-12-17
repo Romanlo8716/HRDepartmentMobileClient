@@ -1,0 +1,159 @@
+package com.example.hrdepartmentclient.repositories
+
+import com.example.hrdepartmentclient.models.AdressOfDepartment
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.MediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import org.json.JSONObject
+import java.lang.reflect.Type
+import java.net.HttpURLConnection
+import java.net.URL
+
+
+class AdressOfDepartmentRepository {
+
+    private val url = "10.0.2.2"
+
+    suspend fun getAdressOfDepartment(): List<AdressOfDepartment> = withContext(Dispatchers.IO){
+        val url = URL("http://$url:8080/getAdressOfDepartments")
+        val connection = url.openConnection() as HttpURLConnection
+
+        return@withContext try {
+            connection.connect()
+            val inputStream = connection.inputStream
+            val response = inputStream.bufferedReader().use { it.readText() }
+
+            parseJsonToList(response)
+        } finally {
+            connection.disconnect()
+        }
+    }
+
+    suspend fun getAdressDetailsById(id: String): AdressOfDepartment? =
+        withContext(Dispatchers.IO) {
+            val url = URL("http://$url:8080/getAdressOfDepartmentById/$id")
+            val connection = url.openConnection() as HttpURLConnection
+
+            return@withContext try {
+                connection.connect()
+
+                if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+                    val inputStream = connection.inputStream
+                    val response = inputStream.bufferedReader().use { it.readText() }
+                    parseJsonToObject(response)
+                } else {
+                    // Обработка ошибки, например, возврат null или выброс исключения
+                    null
+                }
+            } finally {
+                connection.disconnect()
+            }
+        }
+
+    private fun parseJsonToObject(jsonString: String): AdressOfDepartment? {
+        val gson = Gson()
+        return gson.fromJson(jsonString, AdressOfDepartment::class.java)
+    }
+
+    private fun parseJsonToList(jsonString: String): List<AdressOfDepartment> {
+        val gson = Gson()
+        val listType: Type = object : TypeToken<List<AdressOfDepartment>>() {}.type
+
+        return gson.fromJson(jsonString, listType)
+    }
+
+    suspend fun createAdressOfDepartment(city: String, street: String, house: String): Boolean {
+        val url = "http://$url:8080/createAdressOfDepartments"
+
+        // Создание JSON-объекта с данными
+        val data = JSONObject()
+        data.put("city", city)
+        data.put("street", street)
+        data.put("house", house)
+
+        return withContext(Dispatchers.IO) {
+            val client = OkHttpClient()
+
+            // Используйте MediaType.parse для создания MediaType из строки
+            val mediaType = MediaType.parse("application/json; charset=utf-8")
+
+            // Создание JSON-объекта с данными
+            val data = JSONObject()
+            data.put("city", city)
+            data.put("street", street)
+            data.put("house", house)
+
+            // Отправка POST-запроса с использованием OkHttp
+            val requestBody = RequestBody.create(mediaType, data.toString())
+            val request = Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build()
+
+            val response = client.newCall(request).execute()
+
+            response.isSuccessful
+        }
+    }
+
+    suspend fun deleteAdressOfDepartment(id: String): Boolean {
+        val url = "http://$url:8080/deleteAdressOfDepartment/$id"
+
+        return withContext(Dispatchers.IO) {
+            val client = OkHttpClient()
+
+            val request = Request.Builder()
+                .url(url)
+                .delete()
+                .build()
+
+            val response = client.newCall(request).execute()
+
+            response.isSuccessful
+        }
+    }
+
+    suspend fun updateAdressOfDepartment(id: String, city: String, street: String, house: String): Boolean {
+        val url = "http://$url:8080/updateAdressOfDepartment/$id"
+
+        // Создание JSON-объекта с данными
+        val data = JSONObject()
+        data.put("city", city)
+        data.put("street", street)
+        data.put("house", house)
+
+        return withContext(Dispatchers.IO) {
+            val client = OkHttpClient()
+
+            // Используйте MediaType.parse для создания MediaType из строки
+            val mediaType = MediaType.parse("application/json; charset=utf-8")
+
+            // Создание JSON-объекта с данными
+            val data = JSONObject()
+            data.put("city", city)
+            data.put("street", street)
+            data.put("house", house)
+
+            // Отправка PUT-запроса с использованием OkHttp
+            val requestBody = RequestBody.create(mediaType, data.toString())
+            val request = Request.Builder()
+                .url(url)
+                .put(requestBody)
+                .build()
+
+            val response = client.newCall(request).execute()
+
+            response.isSuccessful
+        }
+    }
+
+
+
+}

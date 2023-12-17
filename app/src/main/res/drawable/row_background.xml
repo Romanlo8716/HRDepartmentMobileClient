@@ -1,0 +1,15 @@
+<!-- res/drawable/row_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color for the entire row -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+    <!-- Border for the bottom edge of the row -->
+    <item android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/darker_gray" />
+        </shape>
+    </item>
+</layer-list>

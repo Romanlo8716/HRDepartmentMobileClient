@@ -1,0 +1,497 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.worker.WorkerDetailsFragment">
+
+        <!-- Worker's Name TextViews (Centered at the top) -->
+        <LinearLayout
+            android:id="@+id/linearLayoutName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+
+            <EditText
+                android:id="@+id/editTextSurnameWorker"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:hint="Фамилия"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextNameWorker"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:hint="Имя"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextMiddlenameWorker"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:hint="Отчество"
+                android:textSize="20sp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Загрузить фото"
+            android:layout_below="@id/linearLayoutName"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="13dp"
+            android:textSize="20dp"/>
+        <!-- Worker's Photo (Left) -->
+        <Button
+            android:id="@+id/buttonImageWorker"
+            android:layout_width="400px"
+            android:layout_height="150px"
+            android:layout_below="@id/linearLayoutName"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
+            android:scaleType="centerCrop"
+            android:text="Выберите фото"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/imageViewWorkerCreate"
+            android:layout_width="400px"
+            android:layout_height="400px"
+            android:layout_below="@id/buttonImageWorker"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/no_photo"/>
+
+        <!-- "Personal Data" Label (Right) -->
+
+        <!-- Date of Birth TextView (Below "Personal Data" Label) -->
+
+        <TextView
+            android:id="@+id/lichData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayoutName"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="-30px"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="53dp"
+            android:text="Личные данные"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+
+        <TextView
+            android:layout_below="@id/lichData"
+            android:text="Выберите дату рождения:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="10dp"/>
+        <DatePicker
+            android:id="@+id/datePickerDateOfBirth"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textSize="17sp"
+            android:layout_below="@id/lichData"
+            android:layout_alignParentEnd="false"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="190dp"
+            />
+
+        <TextView
+            android:layout_below="@id/datePickerDateOfBirth"
+            android:text="Выберите пол сотрудника:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="20dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textSize="17sp"
+            android:layout_below="@id/datePickerDateOfBirth"
+            android:layout_alignParentEnd="false"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="190dp"/>
+
+        <TextView
+            android:id="@+id/placeHome"
+            android:layout_below="@id/imageViewWorkerCreate"
+            android:text="Введите место проживания сотрудника:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutPlaceHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/placeHome"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+
+
+            <EditText
+                android:id="@+id/editTextCityWorker"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:hint="Город"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextStreetWorker"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:hint="Улица"
+                android:textSize="15sp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextHomeWorker"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:hint="Дом"
+                android:textSize="15sp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/leftLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/linearLayoutPlaceHome"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/familyData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Данные о семье"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:textSize="19sp"/>
+
+            <TextView
+            android:id="@+id/familyPos"
+            android:layout_below="@id/spinnerGender"
+            android:text="Семейное положение:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinerFamilyPos"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:layout_below="@id/familyData"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20px"/>
+
+            <EditText
+                android:id="@+id/editTextCoutChildren"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:hint="Кол-во детей"
+                android:textSize="17sp"
+                android:layout_below="@id/spinerFamilyPos"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20px"/>
+
+            <TextView
+                android:id="@+id/contInform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Контакты"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginTop="15sp"/>
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Телефон"
+                android:layout_below="@id/contInform"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="20px"/>
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Почта"
+                android:layout_below="@id/editTextPhone"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20px"/>
+
+            <TextView
+                android:id="@+id/Snils"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Снилс"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginLeft="20px"/>
+
+            <EditText
+                android:id="@+id/editTextSnils"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Номер СНИЛС"
+                android:layout_below="@id/Snils"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20px"/>
+
+
+
+        </LinearLayout>
+
+
+
+        <!-- Right LinearLayout Below the Photo -->
+        <LinearLayout
+            android:id="@+id/rightLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/linearLayoutPlaceHome"
+            android:layout_alignRight="@+id/leftLinearLayout"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/passData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Паспортные данные"
+                android:textColor="@color/black"
+                android:textSize="19sp"/>
+
+            <EditText
+                android:id="@+id/editTextSeriesPass"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Серия паспорта"
+                android:layout_below="@id/passData"
+                android:layout_marginTop="15dp" />
+
+            <EditText
+                android:id="@+id/editTextNumberPass"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Номер пасорта"
+                android:layout_below="@id/editTextSeriesPass"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:id="@+id/editTextIssuedByWhom"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:hint="Кем выдан"
+                android:textSize="17sp"
+                android:layout_below="@id/editTextNumberPass"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/dateOfIssue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Выберите дату выдачи:"
+                android:layout_below="@id/editTextIssuedByWhom"
+                android:layout_marginTop="10dp"/>
+
+            <DatePicker
+                android:id="@+id/datePickerDateOfIssue"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:layout_below="@id/dateOfIssue" />
+
+            <EditText
+                android:id="@+id/editTextCodePodraz"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:hint="Код подразделения"
+                android:layout_below="@id/datePickerDateOfIssue"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/inn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Инн"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginTop="15sp"/>
+
+            <EditText
+                android:id="@+id/editTextInn"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:textSize="17sp"
+                android:hint="Номер ИНН"
+                android:layout_below="@id/inn"
+                android:layout_marginTop="10dp" />
+
+
+
+            <!-- Add your views inside this LinearLayout -->
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/descWorker"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/leftLinearLayout"
+            android:text="Описание сотрудника:"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:background="@drawable/background_shape"
+            android:textColor="@color/white"
+            android:layout_width="360dp"/>
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/descWorker"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:hint="Описание сотрудника"
+            android:background="@drawable/border_background"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/MilitaryTitle"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextDescription"
+            android:text="Данные военного билета:"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:background="@drawable/background_shape"
+            android:textColor="@color/white"
+            android:layout_width="360dp"/>
+
+        <LinearLayout
+            android:id="@+id/DescMilitaryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/MilitaryTitle"
+
+            android:gravity="center"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/editTextMilitaryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Звание"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+            <TextView
+                android:id="@+id/ShelfLife"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Категория годности"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+            <Spinner
+                android:id="@+id/spinnerShelfLife"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/StockCatagory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Категория запаса"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+            <Spinner
+                android:id="@+id/spinnerStockCatagory"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="17sp" />
+
+            <EditText
+                android:id="@+id/editTextProfile"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Состав"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+            <EditText
+                android:id="@+id/editTextVUS"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="ВУС"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+            <EditText
+                android:id="@+id/editTextNameKomis"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Коммисариат"
+                android:textSize="17sp"
+                android:layout_marginTop="15sp"/>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/createWorker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/DescMilitaryTitle"
+            android:layout_marginTop="24dp"
+            android:text="Добавить"
+            android:gravity="center"
+            android:width="200dp"
+            android:height="50dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</ScrollView>

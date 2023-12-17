@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <EditText
+        android:id="@+id/editTextNameDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название отдела"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNameDepartment"
+        android:layout_marginTop="16dp"
+        android:hint="Номер телефона"
+        android:inputType="text" />
+
+    <Spinner
+        android:id="@+id/departmentSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhone"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/createDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/departmentSpinner"
+        android:layout_marginTop="24dp"
+        android:text="Добавить"
+        android:gravity="center"
+        android:width="200dp"
+        android:height="50dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.hrdepartmentclient.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_worker"
+        android:name="com.example.hrdepartmentclient.ui.worker.WorkerFragment"
+        android:label="@string/menu_worker"
+        tools:layout="@layout/fragment_worker">
+    <action
+        android:id="@+id/action_nav_worker_to_nav_workerDetails"
+        app:destination="@id/nav_workerDetails"
+        app:popUpTo="@id/nav_worker"
+        app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_worker_to_nav_workercreate"
+            app:destination="@id/nav_workercreate"
+            app:popUpTo="@id/nav_worker"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_workercreate"
+        android:name="com.example.hrdepartmentclient.ui.worker.WorkerCreateFragment"
+        android:label="Добавление сотрудника"
+        tools:layout="@layout/fragment_workercreate">
+        <action
+            android:id="@+id/action_nav_workercreate_to_nav_worker"
+            app:destination="@id/nav_worker"
+            app:popUpTo="@id/nav_workercreate"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_workerupdate"
+        android:name="com.example.hrdepartmentclient.ui.worker.WorkerUpdateFragment"
+        android:label="Изменение сотрудника"
+        tools:layout="@layout/fragment_workerupdate">
+        <action
+            android:id="@+id/action_nav_workerupdate_to_nav_worker"
+            app:destination="@id/nav_worker"
+            app:popUpTo="@id/nav_workerupdate"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="selectedWorkerId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_workerDetails"
+        android:name="com.example.hrdepartmentclient.ui.worker.WorkerDetailsFragment"
+        android:label="Описание сотрудника"
+        tools:layout="@layout/fragment_workerdetails">
+        <action
+            android:id="@+id/action_nav_workerDetails_to_nav_worker"
+            app:destination="@id/nav_worker"
+            app:popUpTo="@id/nav_workerDetails"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_workerDetails_to_nav_workerupdate"
+            app:destination="@id/nav_workerupdate"
+            app:popUpTo="@id/nav_workerDetails"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedWorkerId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_department"
+        android:name="com.example.hrdepartmentclient.ui.department.DepartmentFragment"
+        android:label="@string/menu_department"
+        tools:layout="@layout/fragment_department" >
+    <action
+        android:id="@+id/action_nav_department_to_nav_departmentDetails"
+        app:destination="@id/nav_departmentDetails"
+        app:popUpTo="@id/nav_department"
+        app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_department_to_nav_departmentcreate"
+            app:destination="@id/nav_departmentcreate"
+            app:popUpTo="@id/nav_department"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_departmentcreate"
+        android:name="com.example.hrdepartmentclient.ui.department.DepartmentCreateFragment"
+        android:label="Добавление отдела"
+        tools:layout="@layout/fragment_department_create">
+        <action
+            android:id="@+id/action_nav_departmentcreate_to_nav_department"
+            app:destination="@id/nav_department"
+            app:popUpTo="@id/nav_departmentcreate"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_departmentupdate"
+        android:name="com.example.hrdepartmentclient.ui.department.DepartmentUpdateFragment"
+        android:label="Изменение отдела"
+        tools:layout="@layout/fragment_departmentupdate">
+        <action
+            android:id="@+id/action_nav_departmentupdate_to_nav_department"
+            app:destination="@id/nav_department"
+            app:popUpTo="@id/nav_departmentupdate"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="selectedDepartmentId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_departmentDetails"
+        android:name="com.example.hrdepartmentclient.ui.department.DepartmentDetailsFragment"
+        android:label="Описание отдела"
+        tools:layout="@layout/fragment_departmentdetails">
+        <action
+            android:id="@+id/action_nav_departmentDetails_to_nav_department"
+            app:destination="@id/nav_department"
+            app:popUpTo="@id/nav_departmentDetails"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_departmentDetails_to_nav_departmentupdate"
+            app:destination="@id/nav_departmentupdate"
+            app:popUpTo="@id/nav_departmentDetails"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedDepartmentId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_post"
+        android:name="com.example.hrdepartmentclient.ui.post.PostFragment"
+        android:label="@string/menu_post"
+        tools:layout="@layout/fragment_post">
+    <action
+        android:id="@+id/action_nav_post_to_nav_postDetails"
+        app:destination="@id/nav_postDetails"
+        app:popUpTo="@id/nav_post"
+        app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_post_to_nav_postcreate"
+            app:destination="@id/nav_postcreate"
+            app:popUpTo="@id/nav_post"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_postcreate"
+        android:name="com.example.hrdepartmentclient.ui.post.PostCreateFragment"
+        android:label="Добавление должности"
+        tools:layout="@layout/fragment_postcreate">
+        <action
+            android:id="@+id/action_nav_postcreate_to_nav_post"
+            app:destination="@id/nav_post"
+            app:popUpTo="@id/nav_postcreate"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_postupdate"
+        android:name="com.example.hrdepartmentclient.ui.post.PostUpdateFragment"
+        android:label="Изменение должности"
+        tools:layout="@layout/fragment_postupdate">
+        <action
+            android:id="@+id/action_nav_postupdate_to_nav_post"
+            app:destination="@id/nav_post"
+            app:popUpTo="@id/nav_postupdate"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedPostId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_postDetails"
+        android:name="com.example.hrdepartmentclient.ui.post.PostDetailsFragment"
+        android:label="Описание должности"
+        tools:layout="@layout/fragment_postdetails">
+        <action
+            android:id="@+id/action_nav_postDetails_to_nav_post"
+            app:destination="@id/nav_post"
+            app:popUpTo="@id/nav_postDetails"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_postDetails_to_nav_postupdate"
+            app:destination="@id/nav_postupdate"
+            app:popUpTo="@id/nav_postDetails"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedPostId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_adressOfDepartment"
+        android:name="com.example.hrdepartmentclient.ui.adressofdepartment.AdressOfDepartmentFragment"
+        android:label="@string/menu_adressOfDepartment"
+        tools:layout="@layout/fragment_adressofdepartment">
+        <action
+            android:id="@+id/action_nav_adressOfDepartment_to_nav_adressOfDepartmentDetails"
+            app:destination="@id/nav_adressOfDepartmentDetails"
+            app:popUpTo="@id/nav_adressOfDepartment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_adressOfDepartment_to_nav_adressofdepartmentcreate"
+            app:destination="@id/nav_adressofdepartmentcreate"
+            app:popUpTo="@id/nav_adressOfDepartment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_adressofdepartmentcreate"
+        android:name="com.example.hrdepartmentclient.ui.adressofdepartment.AdressOfDepartmentCreateFragment"
+        android:label="Добавление адреса отдела"
+        tools:layout="@layout/fragment_adressofdepartmentcreate">
+        <action
+            android:id="@+id/action_nav_adressofdepartmentcreate_to_nav_adressOfDepartment"
+            app:destination="@id/nav_adressOfDepartment"
+            app:popUpTo="@id/nav_adressofdepartmentcreate"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_adressofdepartmentupdate"
+        android:name="com.example.hrdepartmentclient.ui.adressofdepartment.AdressOfDepartmentUpdateFragment"
+        android:label="Изменение адреса отдела"
+        tools:layout="@layout/fragment_adressofdepartmentupdate">
+        <action
+            android:id="@+id/action_nav_adressofdepartmentupdate_to_nav_adressOfDepartment"
+            app:destination="@id/nav_adressOfDepartment"
+            app:popUpTo="@id/nav_adressofdepartmentupdate"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedAdressId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_adressOfDepartmentDetails"
+        android:name="com.example.hrdepartmentclient.ui.adressofdepartment.AdressOfDepartmentDetailsFragment"
+        android:label="Описание адреса отдела"
+        tools:layout="@layout/fragment_adressofdepaertmentdetails">
+        <action
+            android:id="@+id/action_nav_adressOfDepartmentDetails_to_nav_adressOfDepartment"
+            app:destination="@id/nav_adressOfDepartment"
+            app:popUpTo="@id/nav_adressOfDepartmentDetails"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_nav_adressOfDepartmentDetails_to_nav_adressffdepartmentupdate"
+            app:destination="@id/nav_adressofdepartmentupdate"
+            app:popUpTo="@id/nav_adressOfDepartmentDetails"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="selectedAdressId"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_homeFragment_to_workerFragment"
+        app:destination="@id/nav_worker" />
+
+    <action
+        android:id="@+id/action_homeFragment_to_departmentFragment"
+        app:destination="@id/nav_department" />
+
+    <action
+        android:id="@+id/action_homeFragment_to_postFragment"
+        app:destination="@id/nav_post" />
+
+    <action
+        android:id="@+id/action_homeFragment_to_adressOfDepartmentFragment"
+        app:destination="@id/nav_adressOfDepartment" />
+
+
+</navigation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_worker"
+            android:icon="@drawable/workers_icon"
+            android:title="@string/menu_worker" />
+        <item
+            android:id="@+id/nav_department"
+            android:icon="@drawable/department_icon"
+            android:title="@string/menu_department" />
+        <item
+            android:id="@+id/nav_post"
+            android:icon="@drawable/post_icon"
+            android:title="@string/menu_post" />
+        <item
+            android:id="@+id/nav_adressOfDepartment"
+            app:actionLayout="@layout/divider_horizontal_line"
+            android:icon="@drawable/adressofdepartment_icon"
+            android:title="@string/menu_adressOfDepartment" />
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/exit_icon"
+            android:title="Выход" />
+    </group>
+</menu>

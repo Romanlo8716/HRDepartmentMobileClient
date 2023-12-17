@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.adressofdepartment.AdressOfDepartmentDetailsFragment">
+
+    <!-- Add your UI elements here to display details of AdressOfDepartment -->
+    <TextView
+        android:id="@+id/textViewCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="город"
+        android:textSize="22sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCity"
+        android:layout_marginTop="8dp"
+        android:text="Street"
+        android:textSize="22sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textViewHouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewStreet"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:text="House"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/bEditAdressOfDepartment"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/textViewHouse"
+        android:layout_marginTop="8dp"
+        android:text="Изменить" />
+
+    <Button
+        android:id="@+id/bDeleteAdressOfDepartment"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bEditAdressOfDepartment"
+        android:layout_marginTop="8dp"
+        android:text="Удалить"
+        android:backgroundTint="@color/red"/>
+
+    <!-- Add other UI elements as needed -->
+
+</LinearLayout>

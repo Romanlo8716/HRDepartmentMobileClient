@@ -1,0 +1,193 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.department.DepartmentDetailsFragment">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewName"
+        android:layout_marginTop="8dp"
+        android:text="Phone"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/textViewAdress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewPhone"
+        android:layout_marginTop="8dp"
+        android:text="Adress"
+        android:textSize="22sp"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/PostOfDepartment"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewAdress"
+        android:text="Должности в отделе:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreatePostOfDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PostOfDepartment"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutPostOfDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreatePostOfDepartment"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Должность"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Всего мест"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Свободно"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Занято"
+                android:textStyle="bold"
+                android:gravity="center" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/WorkerOfDepartment"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayoutPostOfDepartment"
+        android:text="Сотрудники в отделе:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:layout_width="360dp"/>
+
+    <TextView
+        android:id="@+id/textViewCreateWorkerOfDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/WorkerOfDepartment"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        />
+
+    <TableLayout
+        android:id="@+id/tableLayoutWorkerOfDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCreateWorkerOfDepartment"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="*"
+        android:visibility="gone">
+
+        <!-- Header Row -->
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Сотрудник"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Должность"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/bEditDepartment"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/tableLayoutWorkerOfDepartment"
+        android:layout_marginTop="8dp"
+        android:text="Изменить" />
+
+    <Button
+        android:id="@+id/bDeleteDepartment"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/bEditDepartment"
+        android:layout_marginTop="8dp"
+        android:text="Удалить"
+        android:backgroundTint="@color/red"/>
+
+
+
+</LinearLayout>
+</ScrollView>
